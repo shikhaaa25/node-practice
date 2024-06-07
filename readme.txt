@@ -1,0 +1,2 @@
+//mongodb connection string:
+mongodb://localhost:27017/
