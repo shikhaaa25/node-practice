@@ -108,9 +108,12 @@
 const express = require("express");
 const app = express();
 const db = require("./db");
+require('dotenv').config() //for .env file to get the server understand
 
 
 const bodyParser = require("body-parser");
+const PORT=process.env.PORT || 3000
+
 app.use(bodyParser.json());
 app.get("/", function (req, res) {
   res.send("Hello World");
@@ -136,6 +139,6 @@ app.use('/person',personRoutes)
 const menuRoutes=require("./routes/menuRoutes.js")
 app.use('/menuitems',menuRoutes)
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("server is listening on port 3000");
 });
